@@ -63,6 +63,16 @@ namespace SnakesAndLadders.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Board {
+            get {
+                object obj = ResourceManager.GetObject("Board", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap green_felt {
             get {
                 object obj = ResourceManager.GetObject("green_felt", resourceCulture);
@@ -73,29 +83,19 @@ namespace SnakesAndLadders.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap green_felt1 {
+            get {
+                object obj = ResourceManager.GetObject("green_felt1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Welcome_Background {
             get {
                 object obj = ResourceManager.GetObject("Welcome-Background", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Welcome_Background1 {
-            get {
-                object obj = ResourceManager.GetObject("Welcome-Background1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Welcome_Background2 {
-            get {
-                object obj = ResourceManager.GetObject("Welcome-Background2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

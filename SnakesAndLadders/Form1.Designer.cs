@@ -102,12 +102,13 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "START";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // WelcomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SnakesAndLadders.Properties.Resources.green_felt;
+            this.BackgroundImage = global::SnakesAndLadders.Properties.Resources.green_felt1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
