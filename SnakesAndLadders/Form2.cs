@@ -55,74 +55,84 @@ namespace SnakesAndLadders
             this.PlayerOneRollLabel.Text = current_diceRoll.ToString();
             this.playerOneAtStart.Visible = false;
 
-            if (playerOnePosition + current_diceRoll < Constants.FinalPosition)
-                playerOnePosition = NextPosition(playerOnePosition, current_diceRoll);
-            else if (playerOnePosition + current_diceRoll == Constants.FinalPosition)
-            {
-                playerOnePosition = Constants.FinalPosition;
-                Label WinLabel = new Label();
-                this.Controls.Add(WinLabel);
-                WinLabel.Text = this.PlayerOneGameLabel.Text + " wins!";
-                WinLabel.Font = new Font("Arial", 20, FontStyle.Bold);
-                WinLabel.Width = Constants.WinLabelHeight;
-                WinLabel.Height = Constants.WinLabelHeight;
-                WinLabel.Top = Constants.WinLabelTop;
-                WinLabel.Left = Constants.WinLabelLeft;
-                WinLabel.TextAlign = ContentAlignment.MiddleCenter;
-                WinLabel.BackColor = Color.LightGreen;
-                WinLabel.BringToFront();
-            }
+            Player PlayerOne = game.playersList[0];
 
-            this.Controls.Add(PlayerOneDrawing);
+            PlayerOne.MakeYourMoves(this, current_diceRoll);
+            //if (PlayerOne.position + current_diceRoll < Constants.FinalPosition)
+            //    PlayerOne.position = NextPosition(PlayerOne.position, current_diceRoll);
+            //else if (PlayerOne.position + current_diceRoll == Constants.FinalPosition)
+            //{
+            //    PlayerOne.position = Constants.FinalPosition;
+            //    Label WinLabel = new Label();
+            //    this.Controls.Add(WinLabel);
+            //    WinLabel.Text = this.PlayerOneGameLabel.Text + " wins!";
+            //    WinLabel.Font = new Font("Arial", 20, FontStyle.Bold);
+            //    WinLabel.Width = Constants.WinLabelHeight;
+            //    WinLabel.Height = Constants.WinLabelHeight;
+            //    WinLabel.Top = Constants.WinLabelTop;
+            //    WinLabel.Left = Constants.WinLabelLeft;
+            //    WinLabel.TextAlign = ContentAlignment.MiddleCenter;
+            //    WinLabel.BackColor = Color.LightGreen;
+            //    WinLabel.BringToFront();
+            //}
+
+            //this.Controls.Add(PlayerOneDrawing);
             
-            PlayerOneDrawing.BackColor = Color.Blue;
-            PlayerOneDrawing.Width = 34;
-            PlayerOneDrawing.Height = 32;
-            PlayerOneDrawing.Left = game.board.cellList[playerOnePosition].x + 50;
-            PlayerOneDrawing.Top = game.board.cellList[playerOnePosition].y + 10;
-            PlayerOneDrawing.BringToFront();
+            //PlayerOneDrawing.BackColor = Color.Blue;
+            //PlayerOneDrawing.Width = Constants.PlayerBoardDrawingWidth;
+            //PlayerOneDrawing.Height = Constants.PlayerBoardDrawingHeight;  
+            //PlayerOneDrawing.Left = game.board.cellList[PlayerOne.position].x + 50;
+            //PlayerOneDrawing.Top = game.board.cellList[PlayerOne.position].y + 10;
+            //PlayerOneDrawing.BringToFront();
 
         }
 
         private void PlayerTwoRollButton_Click(object sender, EventArgs e)
         {
             int current_diceRoll = Dice.Roll();
-
             this.PlayerTwoRollLabel.Text = current_diceRoll.ToString();
             this.playerTwoAtStart.Visible = false;
 
-            if (playerTwoPosition + current_diceRoll < Constants.FinalPosition)
-                playerTwoPosition = NextPosition(playerTwoPosition, current_diceRoll);
-            else if (playerTwoPosition + current_diceRoll == Constants.FinalPosition)
-            {
-                playerTwoPosition = Constants.FinalPosition;
-                Label WinLabel = new Label();
-                this.Controls.Add(WinLabel);
-                WinLabel.Text = this.PlayerTwoGameLabel.Text + " wins!";
-                WinLabel.Font = new Font("Arial", 20, FontStyle.Bold);
-                WinLabel.Width = Constants.WinLabelWidth;
-                WinLabel.Height = Constants.WinLabelHeight;
-                WinLabel.Top = Constants.WinLabelTop;
-                WinLabel.Left = Constants.WinLabelLeft;
-                WinLabel.TextAlign = ContentAlignment.MiddleCenter;
-                WinLabel.BackColor = Color.LightGreen; 
-                WinLabel.BringToFront();
-            }
+            Player PlayerTwo = game.playersList[1];
 
-            this.Controls.Add(PlayerTwoDrawing);
-            PlayerTwoDrawing.BackColor = Color.Red; 
-            PlayerTwoDrawing.Width =Constants.PlayerBoardDrawingWidth; 
-            PlayerTwoDrawing.Height = Constants.PlayerBoardDrawingHeight; 
-            PlayerTwoDrawing.Left = game.board.cellList[playerTwoPosition].x + 50; 
-            PlayerTwoDrawing.Top = game.board.cellList[playerTwoPosition].y + 60;
-            PlayerTwoDrawing.BringToFront();
+            PlayerTwo.MakeYourMoves(this, current_diceRoll);
+
+            //this.PlayerTwoRollLabel.Text = current_diceRoll.ToString();
+            //this.playerTwoAtStart.Visible = false;
+
+            //if (playerTwoPosition + current_diceRoll < Constants.FinalPosition)
+            //    playerTwoPosition = NextPosition(playerTwoPosition, current_diceRoll);
+            //else if (playerTwoPosition + current_diceRoll == Constants.FinalPosition)
+            //{
+            //    playerTwoPosition = Constants.FinalPosition;
+            //    Label WinLabel = new Label();
+            //    this.Controls.Add(WinLabel);
+            //    WinLabel.Text = this.PlayerTwoGameLabel.Text + " wins!";
+            //    WinLabel.Font = new Font("Arial", 20, FontStyle.Bold);
+            //    WinLabel.Width = Constants.WinLabelWidth;
+            //    WinLabel.Height = Constants.WinLabelHeight;
+            //    WinLabel.Top = Constants.WinLabelTop;
+            //    WinLabel.Left = Constants.WinLabelLeft;
+            //    WinLabel.TextAlign = ContentAlignment.MiddleCenter;
+            //    WinLabel.BackColor = Color.LightGreen; 
+            //    WinLabel.BringToFront();
+            //}
+
+            //this.Controls.Add(PlayerTwoDrawing);
+            //PlayerTwoDrawing.BackColor = Color.Red; 
+            //PlayerTwoDrawing.Width =Constants.PlayerBoardDrawingWidth; 
+            //PlayerTwoDrawing.Height = Constants.PlayerBoardDrawingHeight; 
+            //PlayerTwoDrawing.Left = game.board.cellList[playerTwoPosition].x + 50; 
+            //PlayerTwoDrawing.Top = game.board.cellList[playerTwoPosition].y + 60;
+            //PlayerTwoDrawing.BringToFront();
+            
             //this.Controls.SetChildIndex(PlayerOneDrawing, 1);
             //this.Refresh();
             //Thread.Sleep(1000);
             
         }
 
-        private int NextPosition(int playerPosition, int current_diceRoll)
+        public int NextPosition(int playerPosition, int current_diceRoll)
         {
             int result = playerPosition + current_diceRoll;
             switch (result)
@@ -149,5 +159,7 @@ namespace SnakesAndLadders
             return result;
 
         }
+
+      
     }
 }

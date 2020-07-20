@@ -198,10 +198,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Player1RollButton;
-        private System.Windows.Forms.Label PlayerOneRollLabel;
-        private System.Windows.Forms.Label PlayerTwoRollLabel;
         private System.Windows.Forms.Button PlayerTwoRollButton;
-        private System.Windows.Forms.Panel playerTwoAtStart;
-        private System.Windows.Forms.Panel playerOneAtStart;
+        public System.Windows.Forms.Label PlayerOneRollLabel;
+        public System.Windows.Forms.Label PlayerTwoRollLabel;
+        public System.Windows.Forms.Panel playerTwoAtStart;
+        public System.Windows.Forms.Panel playerOneAtStart;
     }
 }
