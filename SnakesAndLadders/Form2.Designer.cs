@@ -31,6 +31,8 @@
             this.PlayerOneGameLabel = new System.Windows.Forms.Label();
             this.PlayerTwoGameLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.playerTwoAtStart = new System.Windows.Forms.Panel();
+            this.playerOneAtStart = new System.Windows.Forms.Panel();
             this.StartGameButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,8 +40,6 @@
             this.PlayerOneRollLabel = new System.Windows.Forms.Label();
             this.PlayerTwoRollLabel = new System.Windows.Forms.Label();
             this.PlayerTwoRollButton = new System.Windows.Forms.Button();
-            this.playerOneAtStart = new System.Windows.Forms.Panel();
-            this.playerTwoAtStart = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(825, 756);
             this.panel1.TabIndex = 2;
+            // 
+            // playerTwoAtStart
+            // 
+            this.playerTwoAtStart.BackColor = System.Drawing.Color.Red;
+            this.playerTwoAtStart.Location = new System.Drawing.Point(64, 658);
+            this.playerTwoAtStart.Name = "playerTwoAtStart";
+            this.playerTwoAtStart.Size = new System.Drawing.Size(34, 32);
+            this.playerTwoAtStart.TabIndex = 1;
+            this.playerTwoAtStart.Visible = false;
+            // 
+            // playerOneAtStart
+            // 
+            this.playerOneAtStart.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.playerOneAtStart.Location = new System.Drawing.Point(64, 608);
+            this.playerOneAtStart.Name = "playerOneAtStart";
+            this.playerOneAtStart.Size = new System.Drawing.Size(34, 32);
+            this.playerOneAtStart.TabIndex = 0;
+            this.playerOneAtStart.Visible = false;
             // 
             // StartGameButton
             // 
@@ -146,24 +164,6 @@
             this.PlayerTwoRollButton.Text = "Roll";
             this.PlayerTwoRollButton.UseVisualStyleBackColor = true;
             this.PlayerTwoRollButton.Click += new System.EventHandler(this.PlayerTwoRollButton_Click);
-            // 
-            // playerOneAtStart
-            // 
-            this.playerOneAtStart.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.playerOneAtStart.Location = new System.Drawing.Point(64, 608);
-            this.playerOneAtStart.Name = "playerOneAtStart";
-            this.playerOneAtStart.Size = new System.Drawing.Size(34, 32);
-            this.playerOneAtStart.TabIndex = 0;
-            this.playerOneAtStart.Visible = false;
-            // 
-            // playerTwoAtStart
-            // 
-            this.playerTwoAtStart.BackColor = System.Drawing.Color.Red;
-            this.playerTwoAtStart.Location = new System.Drawing.Point(64, 658);
-            this.playerTwoAtStart.Name = "playerTwoAtStart";
-            this.playerTwoAtStart.Size = new System.Drawing.Size(34, 32);
-            this.playerTwoAtStart.TabIndex = 1;
-            this.playerTwoAtStart.Visible = false;
             // 
             // SLGame
             // 

@@ -55,8 +55,26 @@ namespace SnakesAndLadders
             this.PlayerOneRollLabel.Text = current_diceRoll.ToString();
             this.playerOneAtStart.Visible = false;
 
+            if (playerOnePosition + current_diceRoll < Constants.FinalPosition)
+                playerOnePosition = NextPosition(playerOnePosition, current_diceRoll);
+            else if (playerOnePosition + current_diceRoll == Constants.FinalPosition)
+            {
+                playerOnePosition = Constants.WinLabelHeight;
+                Label WinLabel = new Label();
+                this.Controls.Add(WinLabel);
+                WinLabel.Text = this.PlayerOneGameLabel.Text + " wins!";
+                WinLabel.Font = new Font("Arial", 20, FontStyle.Bold);
+                WinLabel.Width = Constants.WinLabelHeight;
+                WinLabel.Height = Constants.WinLabelHeight;
+                WinLabel.Top = Constants.WinLabelTop;
+                WinLabel.Left = Constants.WinLabelLeft;
+                WinLabel.TextAlign = ContentAlignment.MiddleCenter;
+                WinLabel.BackColor = Color.LightGreen;
+                WinLabel.BringToFront();
+            }
+
             this.Controls.Add(PlayerOneDrawing);
-            playerOnePosition += current_diceRoll;
+            
             PlayerOneDrawing.BackColor = Color.Blue;
             PlayerOneDrawing.Width = 34;
             PlayerOneDrawing.Height = 32;
@@ -73,11 +91,28 @@ namespace SnakesAndLadders
             this.PlayerTwoRollLabel.Text = current_diceRoll.ToString();
             this.playerTwoAtStart.Visible = false;
 
-            playerTwoPosition += current_diceRoll;
+            if (playerTwoPosition + current_diceRoll < Constants.FinalPosition)
+                playerTwoPosition = NextPosition(playerTwoPosition, current_diceRoll);
+            else if (playerTwoPosition + current_diceRoll == Constants.FinalPosition)
+            {
+                playerTwoPosition = Constants.FinalPosition;
+                Label WinLabel = new Label();
+                this.Controls.Add(WinLabel);
+                WinLabel.Text = this.PlayerTwoGameLabel.Text + " wins!";
+                WinLabel.Font = new Font("Arial", 20, FontStyle.Bold);
+                WinLabel.Width = Constants.WinLabelWidth;
+                WinLabel.Height = Constants.WinLabelHeight;
+                WinLabel.Top = Constants.WinLabelTop;
+                WinLabel.Left = Constants.WinLabelLeft;
+                WinLabel.TextAlign = ContentAlignment.MiddleCenter;
+                WinLabel.BackColor = Color.LightGreen; 
+                WinLabel.BringToFront();
+            }
+
             this.Controls.Add(PlayerTwoDrawing);
             PlayerTwoDrawing.BackColor = Color.Red; 
-            PlayerTwoDrawing.Width =34; 
-            PlayerTwoDrawing.Height =32; 
+            PlayerTwoDrawing.Width =Constants.PlayerBoardDrawingWidth; 
+            PlayerTwoDrawing.Height = Constants.PlayerBoardDrawingHeight; 
             PlayerTwoDrawing.Left = game.board.cellList[playerTwoPosition].x + 50; 
             PlayerTwoDrawing.Top = game.board.cellList[playerTwoPosition].y + 60;
             PlayerTwoDrawing.BringToFront();
@@ -85,6 +120,34 @@ namespace SnakesAndLadders
             //this.Refresh();
             //Thread.Sleep(1000);
             
+        }
+
+        private int NextPosition(int playerPosition, int current_diceRoll)
+        {
+            int result = playerPosition + current_diceRoll;
+            switch (result)
+            {
+                case 1:
+                    result = 9;
+                    break;
+                case 12:
+                    result = 2;
+                    break;
+                case 14:
+                    result = 22;
+                    break;
+                case 20:
+                    result = 6;
+                    break;
+                case 18: 
+                    result = 31;
+                    break;
+                case 34:
+                    result = 27;
+                    break;
+            }
+            return result;
+
         }
     }
 }
