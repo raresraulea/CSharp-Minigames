@@ -59,7 +59,7 @@ namespace SnakesAndLadders
                 playerOnePosition = NextPosition(playerOnePosition, current_diceRoll);
             else if (playerOnePosition + current_diceRoll == Constants.FinalPosition)
             {
-                playerOnePosition = Constants.WinLabelHeight;
+                playerOnePosition = Constants.FinalPosition;
                 Label WinLabel = new Label();
                 this.Controls.Add(WinLabel);
                 WinLabel.Text = this.PlayerOneGameLabel.Text + " wins!";
